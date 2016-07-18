@@ -10,6 +10,20 @@ var users = require('./routes/users');
 
 var app = express();
 
+//  server Mongo
+////////////////////
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/servertest');
+
+var TodoSchema = new mongoose.Schema({
+  name: String,
+  completed: Boolean,
+  note: String,
+  updated_at: { type: Date, default: Date.now },
+});
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
