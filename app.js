@@ -14,7 +14,7 @@ var app = express();
 ////////////////////
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/servertest');
+mongoose.connect('mongodb://localhost:27017/test');
 
 var TodoSchema = new mongoose.Schema({
   name: String,
